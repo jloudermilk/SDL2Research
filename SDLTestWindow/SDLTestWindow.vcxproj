@@ -74,18 +74,24 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\Users\T-JustinL\Documents\SDL2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\T-JustinL\Documents\SDL2\VisualC\Win32\Release;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)\gl3w\include;$(SolutionDir)\SDL-mirror\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\SDL-mirror\VisualC\Win32\Release;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(SolutionDir)\gl3w\src;$(SourcePath)</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\T-JustinL\Documents\SDL2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\T-JustinL\Documents\SDL2\VisualC\Win32\Debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)\gl3w\include;$(SolutionDir)\SDL-mirror\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\SDL-mirror\VisualC\Win32\Debug;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(SolutionDir)\gl3w\src;$(SourcePath)</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\T-JustinL\Documents\SDL2\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\gl3w\include;$(SolutionDir)\SDL-mirror\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\SDL-mirror\VisualC\x64\Debug;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(SolutionDir)\gl3w\src;$(SourcePath)</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>C:\Users\T-JustinL\Documents\SDL2\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\gl3w\include;$(SolutionDir)\SDL-mirror\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)\SDL-mirror\VisualC\x64\Release;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(SolutionDir)\gl3w\src;$(SourcePath)</SourcePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
