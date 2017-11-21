@@ -1,14 +1,16 @@
+#include "GL/gl3w.h"
 #include "SDL.h"
 
 int main(int argc, char *argv[])
 {
 	// SDL initialization
-	SDL_Window* window = SDL_CreateWindow("test", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_SHOWN);
+	SDL_Window* window = SDL_CreateWindow("Opengl test", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_SHOWN);
 	SDL_Event* event = new SDL_Event();
 	SDL_Renderer* render = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
 	bool quit = false;
 
+	gl3wInit();
 
 
 	// Main loop
@@ -37,7 +39,7 @@ int main(int argc, char *argv[])
 		// Update SDL screen
 		SDL_RenderPresent(render);
 
-	
+
 	}
 
 	return 0;
