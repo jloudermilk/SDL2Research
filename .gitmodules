@@ -1,3 +1,6 @@
 [submodule "SDL-mirror"]
 	path = SDL-mirror
 	url = https://github.com/lordkuragari/SDL-mirror.git
+[submodule "gl3w"]
+	path = gl3w
+	url = https://github.com/lordkuragari/gl3w
