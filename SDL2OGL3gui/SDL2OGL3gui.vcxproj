@@ -18,6 +18,23 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="imgui\include\imconfig.h" />
+    <ClInclude Include="imgui\include\imgui.h" />
+    <ClInclude Include="imgui\include\imgui_internal.h" />
+    <ClInclude Include="imgui\include\stb_rect_pack.h" />
+    <ClInclude Include="imgui\include\stb_textedit.h" />
+    <ClInclude Include="imgui\include\stb_truetype.h" />
+    <ClInclude Include="include\imgui_impl_sdl_gl3.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\gl3w\src\gl3w.c" />
+    <ClCompile Include="imgui\src\imgui.cpp" />
+    <ClCompile Include="imgui\src\imgui_demo.cpp" />
+    <ClCompile Include="imgui\src\imgui_draw.cpp" />
+    <ClCompile Include="src\imgui_impl_sdl_gl3.cpp" />
+    <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{7633BDE6-8B99-465E-B46C-F2DC2AA6593B}</ProjectGuid>
@@ -69,7 +86,9 @@
   <ImportGroup Label="Shared">
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LibraryPath>$(SolutionDir)gl3w\src;$(SolutionDir)SDL-mirror\VisualC\Win32\Debug;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)SDL-mirror\VisualC\Win32\Debug;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)SDL2OGL3gui\imgui\include;$(SolutionDir)SDL2OGL3gui\include;$(IncludePath)</IncludePath>
+    <SourcePath>$(SolutionDir)SDL2OGL3gui\imgui\src;$(SolutionDir)SDL2OGL3gui\src;$(SolutionDir)gl3w\src;$(SourcePath)</SourcePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -114,10 +133,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\gl3w\src\gl3w.c" />
-    <ClCompile Include="main.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

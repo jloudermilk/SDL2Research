@@ -13,13 +13,57 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="imgui">
+      <UniqueIdentifier>{5cb6f097-e77e-49ec-be45-e42311c076f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="imgui\include">
+      <UniqueIdentifier>{38ff1235-7e98-464c-8e9f-17bf748a88eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="imgui\src">
+      <UniqueIdentifier>{fea0267c-ace0-4edd-ada7-b3d5aba2f20e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
+    <ClInclude Include="include\imgui_impl_sdl_gl3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\include\imgui.h">
+      <Filter>imgui\include</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\include\imgui_internal.h">
+      <Filter>imgui\include</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\include\stb_rect_pack.h">
+      <Filter>imgui\include</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\include\stb_textedit.h">
+      <Filter>imgui\include</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\include\stb_truetype.h">
+      <Filter>imgui\include</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\include\imconfig.h">
+      <Filter>imgui\include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\imgui_impl_sdl_gl3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\gl3w\src\gl3w.c">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\src\imgui.cpp">
+      <Filter>imgui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\src\imgui_demo.cpp">
+      <Filter>imgui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\src\imgui_draw.cpp">
+      <Filter>imgui\src</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
