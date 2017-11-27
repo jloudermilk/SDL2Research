@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDLTestWindow", "SDLTestWin
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SDL2OGL3gui", "SDL2OGL3gui\SDL2OGL3gui.vcxproj", "{7633BDE6-8B99-465E-B46C-F2DC2AA6593B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StateMachineUI", "StateMachineUI\StateMachineUI.vcxproj", "{C1CFF4C9-1B50-4EF4-B187-F477EF6E2CD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{7633BDE6-8B99-465E-B46C-F2DC2AA6593B}.Release|x64.Build.0 = Release|x64
 		{7633BDE6-8B99-465E-B46C-F2DC2AA6593B}.Release|x86.ActiveCfg = Release|Win32
 		{7633BDE6-8B99-465E-B46C-F2DC2AA6593B}.Release|x86.Build.0 = Release|Win32
+		{C1CFF4C9-1B50-4EF4-B187-F477EF6E2CD4}.Debug|x64.ActiveCfg = Debug|x64
+		{C1CFF4C9-1B50-4EF4-B187-F477EF6E2CD4}.Debug|x64.Build.0 = Debug|x64
+		{C1CFF4C9-1B50-4EF4-B187-F477EF6E2CD4}.Debug|x86.ActiveCfg = Debug|Win32
+		{C1CFF4C9-1B50-4EF4-B187-F477EF6E2CD4}.Debug|x86.Build.0 = Debug|Win32
+		{C1CFF4C9-1B50-4EF4-B187-F477EF6E2CD4}.Release|x64.ActiveCfg = Release|x64
+		{C1CFF4C9-1B50-4EF4-B187-F477EF6E2CD4}.Release|x64.Build.0 = Release|x64
+		{C1CFF4C9-1B50-4EF4-B187-F477EF6E2CD4}.Release|x86.ActiveCfg = Release|Win32
+		{C1CFF4C9-1B50-4EF4-B187-F477EF6E2CD4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
