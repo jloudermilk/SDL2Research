@@ -3,9 +3,22 @@
 #include <stdio.h>
 #include <GL/gl3w.h>    // This example is using gl3w to access OpenGL functions (because it is small). You may use glew/glad/glLoadGen/etc. whatever already works for you.
 #include <SDL.h>
+#include <string>
+
+
+struct inv
+{
+	int potioncount;
+
+};
+
+
+
 
 int main(int argc, char *argv[])
 {
+
+	inv inventory = inv();
 	// Setup SDL
 	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) != 0)
 	{
@@ -31,8 +44,13 @@ int main(int argc, char *argv[])
 
 	ImGui_ImplSdlGL3_Init(window);
 
-	bool show_test_window = true;
-	bool show_another_window = false;
+//	bool show_test_window = true;
+//	bool show_another_window = false;
+	bool show_menu = true;
+	static bool show_inventory = false;
+	static bool show_shop = false;
+	const ImVec2& size = ImVec2(200, 400);
+	
 	ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 
 	// Main loop
@@ -48,35 +66,76 @@ int main(int argc, char *argv[])
 		ImGui_ImplSdlGL3_NewFrame(window);
 
 
-		/*
-
-		// 1. Show a simple window.
-		// Tip: if we don't call ImGui::Begin()/ImGui::End() the widgets appears in a window automatically called "Debug".
+		if(show_menu)
 		{
-			static float f = 0.0f;
-			ImGui::Text("Hello, world!");
-			ImGui::SliderFloat("float", &f, 0.0f, 1.0f);
-			ImGui::ColorEdit3("clear color", (float*)&clear_color);
-			if (ImGui::Button("Test Window")) show_test_window ^= 1;
-			if (ImGui::Button("Another Window")) show_another_window ^= 1;
-			ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
-		}
+			
+			ImGui::Begin("Menu Test", &show_menu);
+			ImGui::SetNextWindowSize(size);
+			if (ImGui::Selectable("Item Shop", false))
+			{
+				if (ImGui::IsMouseClicked)
+				{
+					show_shop = true;
+				}
+			}
+			if (ImGui::Selectable("Inventory", false))
+			{
+				if (ImGui::IsMouseClicked)
+				{
+					show_inventory = true;
+				}
+			}
 
-		// 2. Show another simple window. In most cases you will use an explicit Begin/End pair to name the window.
-		if (show_another_window)
-		{
-			ImGui::Begin("Another Window", &show_another_window);
-			ImGui::Text("Hello from another window!");
+			if (show_inventory)
+			{
+				ImGui::OpenPopup("Inventory");
+				ImGui::BeginPopupModal("Inventory", &show_inventory);
+				const char * c = "";
+		
+				if (inventory.potioncount > 0) {
+					if (ImGui::Selectable("Potions", false))
+					{
+						if (ImGui::IsMouseClicked)
+						{
+							inventory.potioncount--;
+						}
+					}
+					ImGui::SameLine(100);
+					ImGui::Value(c, inventory.potioncount);
+					ImGui::Text(c);
+				}
+				if (ImGui::Button("Close")) 
+				{
+					ImGui::CloseCurrentPopup();
+					show_inventory = false;
+				}
+				ImGui::EndPopup();
+			}
+			if (show_shop)
+			{
+				ImGui::OpenPopup("Item Shop");
+				ImGui::BeginPopupModal("Item Shop", &show_shop);
+				static int potions = 0;
+				ImGui::Text("Potion");
+				ImGui::SameLine();
+				ImGui::PushItemWidth(100);
+				ImGui::InputInt("", &potions);
+
+				if (ImGui::Button("Buy")) {
+					inventory.potioncount += potions;
+					potions = 0;
+				}
+				ImGui::SameLine();
+				if (ImGui::Button("Close"))
+				{
+					ImGui::CloseCurrentPopup();
+					show_shop = false;
+				}
+				ImGui::EndPopup();
+			}
+		
 			ImGui::End();
-		}
-		*/
 
-		// 3. Show the ImGui test window. Most of the sample code is in ImGui::ShowTestWindow().
-		if (show_test_window)
-		{
-			ImGui::SetNextWindowPos(ImVec2(650, 20), ImGuiCond_FirstUseEver);
-
-			ImGui::ShowTestWindow(&show_test_window);
 		}
 
 		// Rendering
